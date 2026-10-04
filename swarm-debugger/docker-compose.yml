@@ -1,0 +1,28 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: swarm_backend
+    ports:
+      - "8000:8000"
+    environment:
+      - MODEL_NAME=gpt-4o
+      - HOST=0.0.0.0
+      - PORT=8000
+    volumes:
+      - ./backend:/sandbox/backend
+      - ./demo-projects:/sandbox/demo-projects
+    command: uvicorn backend.main:app --host 0.0.0.0 --port 8000 --reload
+
+  sandbox:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: swarm_sandbox_runner
+    deploy:
+      resources:
+        limits:
+          cpus: '1.00'
+          memory: 512M
+    network_mode: none

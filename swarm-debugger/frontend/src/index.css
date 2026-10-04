@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-dark: #08090e;
+    --panel-bg: #0e111a;
+    --panel-border: #1e2436;
+    --prosecutor-red: #f43f5e;
+    --defender-blue: #38bdf8;
+    --judge-white: #f8fafc;
+    --verified-green: #10b981;
+    --warning-amber: #f59e0b;
+  }
+
+  body {
+    background-color: #08090e;
+    color: #e2e8f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 14px;
+    line-height: 1.55;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Developer forensic grid background */
+.forensic-grid {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 36px 36px;
+}
+
+/* Pulsing radar dot */
+@keyframes radar-pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.35); opacity: 0.25; }
+  100% { transform: scale(0.95); opacity: 0.9; }
+}
+
+.radar-ping {
+  animation: radar-pulse 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Sleek dark scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #08090e;
+}
+::-webkit-scrollbar-thumb {
+  background: #23283a;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3b4360;
+}

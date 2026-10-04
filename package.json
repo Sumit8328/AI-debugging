@@ -1,0 +1,8 @@
+{
+  "name": "debugger-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix swarm-debugger/frontend run dev",
+    "build": "npm --prefix swarm-debugger/frontend run build"
+  }
+}

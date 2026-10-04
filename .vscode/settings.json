@@ -1,0 +1,8 @@
+{
+  "python.analysis.extraPaths": [
+    "./swarm-debugger"
+  ],
+  "python.autoComplete.extraPaths": [
+    "./swarm-debugger"
+  ]
+}
